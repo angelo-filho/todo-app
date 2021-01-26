@@ -1,0 +1,40 @@
+{% extends 'base.html' %} {% block title %}Login{% endblock %} {% block content
+%}
+<div class="form-box">
+  <div class="form-container">
+    <div class="form-logo">
+      <h1 class="logo">To <span>Do</span></h1>
+    </div>
+    <div class="form-input">
+      <h2 class="form-action">
+        {% block action %}Login{% endblock %}</span>
+      </h2>
+    </div>
+    <form action="" method="POST">
+      {% block username %}{% endblock %}
+      <div class="form-input">
+        <input type="email" name="email" placeholder="Email" />
+      </div>
+      <div class="form-input">
+        <input type="password" name="password" placeholder="Senha" />
+      </div>
+      <div class="form-input">
+        <button type="submit" class="form-button big-button button-blue">
+          {% block button %}Entrar{% endblock %}
+        </button>
+      </div>
+    </form>
+    {% if error %}
+    <div class="form-input error">
+      {{ error }}
+    </div>
+    {% endif %}
+    <div class="form-input">
+      <p>
+        {% block link %} Não tem uma conta?
+        <a href="{{ url_for('register') }}">Cadastre-se</a>{% endblock %}
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}

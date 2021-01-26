@@ -1,0 +1,9 @@
+{% extends 'login.html' %} {% block title %}Register{% endblock %} {% block
+action %}Cadastro{% endblock %} {% block username %}
+  <div class="form-input">
+    <input type="text" name="username" placeholder="Username" />
+  </div>
+  {% endblock %} {% block button %}Registrar{% endblock %} {% block link %}Já
+  possui uma conta?
+  <a href="{{ url_for('login') }}">Conecte-se</a>{% endblock %}
+</span>

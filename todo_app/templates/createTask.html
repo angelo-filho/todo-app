@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {% block title %}Create Task{% endblock %} {% block
+content %}
+<div class="form-box">
+  <div class="form-container">
+    <h2 class="form-action">
+      {% block action %}Criando{% endblock %} <span>tarefa</span>
+    </h2>
+    <form action="" method="POST">
+      <div class="form-input">
+        <label for="title">Titulo:</label><br />
+        <input
+          type="text"
+          name="title"
+          value="{% block title_task %}{% endblock %}"
+          minlength="1"
+          required="True"
+          placeholder="Ex: Reunião as 4 horas"
+        />
+      </div>
+      <div class="form-input">
+        <label for="description">Descrição:</label><br />
+        <textarea
+          name="description"
+          placeholder="Ex: Reunião com meus chefes para definir o plano trimestral."
+        >
+{% block description %}{% endblock %}</textarea
+        >
+      </div>
+      <div class="form-input tasks-button">
+        <a class="form-button button-pink" href="{{ url_for('home') }}">Sair</a>
+        <button type="submit" class="form-button button-blue">Enviar</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

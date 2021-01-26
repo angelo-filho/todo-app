@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {% block title %}Home{% endblock %} {% block content
+%}
+<a
+  href="{{ url_for('create_task') }}"
+  id="add-task"
+  class="big-button button-blue"
+  ><i class="fas fa-plus"></i
+></a>
+<ul>
+  {% for task in tasks %}
+  <li>
+    <a href="task/{{ task.id }}" class="title">{{ task.title }}</a>
+    <a href="task/delete/{{ task.id }}" class="remove"
+      ><i class="fas fa-times"></i> <span>Excluir</span></a
+    >
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}
